@@ -4,6 +4,7 @@ import errorHandler from "./middlewares/errorHandler";
 import routes from "./routes";
 import mongoose from "mongoose";
 const app = express();
+import path from "path";
 
 
 
@@ -16,9 +17,11 @@ db.once("open", ()=> console.log("connected"));
 
 
 
-
+global.appRoot = path.resolve(__dirname);
+app.use(express.urlencoded({extended: false}))
 app.use(express.json());
 app.use("/api", routes);
+app.use("/uploads", express.static("uploads"))
 
 
 

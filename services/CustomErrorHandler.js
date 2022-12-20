@@ -24,6 +24,14 @@ class CustomErrorHandler extends Error{
     static invalidRefreshToken(message = "Invalid refresh token."){
         return new CustomErrorHandler(404, message);
     }
+
+    static serverError(message = "Internal Server error"){
+        return new CustomErrorHandler(500, message);
+    }
+
+    static invalidProductId(message = "Invalid product id"){
+        return new CustomErrorHandler(404, message);
+    }
 }
 
 export default CustomErrorHandler;

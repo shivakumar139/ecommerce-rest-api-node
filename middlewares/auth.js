@@ -1,6 +1,7 @@
 import { CustomErrorHandler, JwtService } from "../services";
 
 const auth = async (req, res, next) => {
+    
     const headerAuth = req.headers.authorization;
     if(!headerAuth){
         next(CustomErrorHandler.noAuthorised());
@@ -17,6 +18,7 @@ const auth = async (req, res, next) => {
         }
 
         req.user = user;
+    
         next();
 
     } catch (error) {
