@@ -20,6 +20,10 @@ class CustomErrorHandler extends Error{
     static notFound(message = "User Not Found."){
         return new CustomErrorHandler(404, message);
     }
+
+    static invalidRefreshToken(message = "Invalid refresh token."){
+        return new CustomErrorHandler(404, message);
+    }
 }
 
 export default CustomErrorHandler;

@@ -1,7 +1,8 @@
 import Joi from "joi";
-import {User} from "../../models";
+import {RefreshToken, User} from "../../models";
 import bcrypt from "bcrypt";
 import { CustomErrorHandler, JwtService } from "../../services";
+import { REFRESH_SECRET } from "../../config";
 
 
 const registerController = {
