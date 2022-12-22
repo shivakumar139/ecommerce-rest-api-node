@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 const app = express();
 import path from "path";
 
+const appPort = process.env.APP_PORT || APP_PORT;
 
 
 // database connection
@@ -30,4 +31,4 @@ app.use("/uploads", express.static("uploads"))
 
 // Error Handler
 app.use(errorHandler);
-app.listen(APP_PORT, ()=>console.log(`Listening to port ${APP_PORT}`))
+app.listen(appPort, ()=>console.log(`Listening to port ${APP_PORT}`))
