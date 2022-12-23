@@ -21,6 +21,10 @@ db.once("open", ()=> console.log("connected"));
 global.appRoot = path.resolve(__dirname);
 app.use(express.urlencoded({extended: false}))
 app.use(express.json());
+
+app.get("/",(req, res) =>{
+    res.json({message: "Hello!👋"});
+})
 app.use("/api", routes);
 app.use("/uploads", express.static("uploads"))
 
