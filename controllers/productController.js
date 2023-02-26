@@ -21,6 +21,7 @@ const upload = multer({ storage: storage }).single("image");
 const productController = {
     async store(req, res, next){
 
+        
         upload(req, res, async (err) =>{
             if(err){
                 return next(CustomErrorHandler.serverError(err.message));
@@ -30,6 +31,7 @@ const productController = {
             const filePath = req.file.path;
             // validation
             const {error} = productSchema.validate(req.body);
+            console.log(req.body)
 
             
             // if error delete the uploaded image
@@ -187,6 +189,8 @@ const productController = {
             if(result === null){
                 return next(CustomErrorHandler.invalidProductId())
             }
+
+            
 
         } catch (error) {
             console.log(error.message)

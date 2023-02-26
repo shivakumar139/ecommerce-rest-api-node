@@ -20,7 +20,6 @@ const errorHandler = (error, req, res, next) => {
 
 
 
-        // email already exists
         if(error instanceof CustomErrorHandler){
             statusCode = error.statusCode;
             data = {

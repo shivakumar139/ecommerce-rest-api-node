@@ -5,8 +5,6 @@ import { CustomErrorHandler, JwtService } from "../../services";
 const refreshController = {
     async create(req, res, next){
 
-
-
         const refreshTokenSchema = Joi.object({
             refresh_token: Joi.string().required()
         });

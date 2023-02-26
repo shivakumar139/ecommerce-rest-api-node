@@ -13,7 +13,7 @@ class CustomErrorHandler extends Error{
     static wrongCredentials(message = "Password is wrong"){
         return new CustomErrorHandler(401, message);
     }
-    static noAuthorised(message = "UnAuthorized Access."){
+    static noAuthorised(message = "UnAuthorized Access"){
         return new CustomErrorHandler(401, message);
     }
 
